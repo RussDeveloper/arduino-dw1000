@@ -543,17 +543,27 @@ public:
 	static void    setBit(byte data[], uint16_t n, uint16_t bit, boolean val);
 	
 	/* Register is 6 bit, 7 = write, 6 = sub-adressing, 5-0 = register value
-	 * Total header with sub-adressing can be 15 bit. */
+	 * Total header with sub-adressing can be 15 bit. 
 	static const byte WRITE      = 0x80; // regular write
 	static const byte WRITE_SUB  = 0xC0; // write with sub address
 	static const byte READ       = 0x00; // regular read
 	static const byte READ_SUB   = 0x40; // read with sub address
-	static const byte RW_SUB_EXT = 0x80; // R/W with sub address extension
+	static const byte RW_SUB_EXT = 0x80; // R/W with sub address extension*/
+
+	#define WRITE      0x80
+	#define WRITE_SUB  0xC0
+	#define READ       0x00
+	#define READ_SUB   0x40
+	#define RW_SUB_EXT 0x80
 	
-	/* clocks available. */
+	/* clocks available. 
 	static const byte AUTO_CLOCK = 0x00;
 	static const byte XTI_CLOCK  = 0x01;
-	static const byte PLL_CLOCK  = 0x02;
+	static const byte PLL_CLOCK  = 0x02;*/
+
+	#define AUTO_CLOCK 0x00
+	#define XTI_CLOCK  0x01
+	#define PLL_CLOCK  0x02
 	
 	/* SPI configs. */
 	static const SPISettings _fastSPI;

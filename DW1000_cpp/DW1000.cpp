@@ -21,7 +21,6 @@
 #include "DW1000.h"
 
 DW1000Class DW1000;
-extern SPIClass  spi_1;
 
 /* ###########################################################################
  * #### Static member variables ##############################################
@@ -114,8 +113,7 @@ const SPISettings* DW1000Class::_currentSPI = &_fastSPI;
  * ######################################################################### */
 
 void DW1000Class::end() {
-	//SPI.end();
-	spi_1.end();
+	SPI.end();
 }
 
 void DW1000Class::select(uint8_t ss) {
@@ -170,13 +168,10 @@ void DW1000Class::begin(uint8_t irq, uint8_t rst) {
 	// Configure the IRQ pin as INPUT. Required for correct interrupt setting for ESP8266
     	pinMode(irq, INPUT);
 	// start SPI
-	//SPI.begin();
-	/*
+	SPI.begin();
 #ifndef ESP8266
 	SPI.usingInterrupt(digitalPinToInterrupt(irq)); // not every board support this, e.g. ESP8266
-
 #endif
-	*/
 	// pin and basic member setup
 	_rst        = rst;
 	_irq        = irq;

@@ -21,6 +21,12 @@
 #ifndef _DW1000CONSTANTS_H_INCLUDED
 #define _DW1000CONSTANTS_H_INCLUDED
 
+#define DW1000_CS         47
+#define DW1000_IRQ        40
+#define DW1000_EXTON      21
+#define DW1000_RES        39
+#define DW1000_WKUP       38
+
 // time stamp byte length
 #define LEN_STAMP 5
 
